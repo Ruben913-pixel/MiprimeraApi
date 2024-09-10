@@ -4,6 +4,7 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('dist'))
 
 
 let notes = [
@@ -25,9 +26,7 @@ let notes = [
   ]
 
 
-app.get('/', (requise,response) => {
-    response.send('<h1>hola con express</h1>')
-})
+
 app.get('/api/notes', (requise,response) => {
     response.json(notes)
 })
